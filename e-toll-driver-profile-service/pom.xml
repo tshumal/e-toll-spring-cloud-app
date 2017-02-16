@@ -12,6 +12,15 @@
     <groupId>io.linx.etoll</groupId>
     <artifactId>e-toll-driver-profile-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <description>Profiling the driver, e.g information about frequent travellers,Complex call graphs to poll and aggregate info,
+        use Spring cloud sleuth to troubleshoot latency across services
+    </description>
+    <developers>
+        <developer>
+            <name>Lingani Tshuma</name>
+            <email>tshumal@gmail.com</email>
+        </developer>
+    </developers>
 
 
 </project>

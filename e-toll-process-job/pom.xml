@@ -12,6 +12,16 @@
     <groupId>io.linx.etoll</groupId>
     <artifactId>e-toll-process-job</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <description>Spring cloud task server less model, A short lived microservice with a specific job processing toll information,
+        that finish and shutdown gracefully without errors.
+        Use Rabbitmq to route information to the server less component.
+    </description>
+    <developers>
+        <developer>
+            <name>Lingani Tshuma</name>
+            <email>tshumal@gmail.com</email>
+        </developer>
+    </developers>
 
 
 </project>

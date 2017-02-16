@@ -10,9 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.linx.etoll</groupId>
-    <artifactId>e-toll-usage-service</artifactId>
+    <artifactId>e-toll-rate-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <description>Check e-toll usage reports, per user, secured with Spring security</description>
+    <description>Store rate information in a consistent manner across our services</description>
     <developers>
         <developer>
             <name>Lingani Tshuma</name>
@@ -52,6 +52,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>
