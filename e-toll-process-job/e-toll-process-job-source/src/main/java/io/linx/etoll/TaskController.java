@@ -1,4 +1,4 @@
-package pluralsight.demo;
+package io.linx.etoll;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
