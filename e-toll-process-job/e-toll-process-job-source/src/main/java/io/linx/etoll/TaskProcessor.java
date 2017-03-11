@@ -1,4 +1,4 @@
-package pluralsight.demo;
+package io.linx.etoll;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,7 +21,7 @@ public class TaskProcessor {
 	public void publishRequest(String payload) {
 
 		//maven://[groupid]:[artifactid]:jar:[version]
-		String url = "maven://pluralsight.demo:pluralsight-springcloud-m3-task:jar:0.0.1-SNAPSHOT";
+		String url = "maven://io.linx.etoll:e-toll-process-job-task:jar:0.0.1-SNAPSHOT";
 
 		List<String> input = new ArrayList<String>(Arrays.asList(payload.split(",")));
 

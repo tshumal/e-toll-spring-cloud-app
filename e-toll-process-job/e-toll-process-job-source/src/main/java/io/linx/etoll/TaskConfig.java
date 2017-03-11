@@ -1,4 +1,4 @@
-package pluralsight.demo;
+package io.linx.etoll;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
