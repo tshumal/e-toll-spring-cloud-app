@@ -11,6 +11,7 @@
 
     <groupId>io.linx.etoll</groupId>
     <artifactId>e-toll-process-job</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <description>Spring cloud task server less model, A short lived microservice with a specific job processing toll information,
         that finish and shutdown gracefully without errors.
@@ -22,6 +23,35 @@
             <email>tshumal@gmail.com</email>
         </developer>
     </developers>
+    <modules>
+        <module>e-toll-process-job-task</module>
+        <module>e-toll-process-job-source</module>
+        <module>e-toll-process-job-sink</module>
+    </modules>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>1.4.3.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Camden.SR4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.10</version>
+                <scope>compile</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

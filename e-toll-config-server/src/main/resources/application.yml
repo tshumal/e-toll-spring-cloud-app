@@ -8,6 +8,8 @@ spring:
         git:
           uri: https://github.com/tshumal/e-toll-spring-cloud-config-rates
           search-paths: toll-gate*
+        encrypt:
+          enabled: false
 security:
   basic:
     enabled: true
@@ -18,3 +20,5 @@ security:
           #password: pword
   #profiles:
   #  active: native
+  encrypt:
+    key: secret
