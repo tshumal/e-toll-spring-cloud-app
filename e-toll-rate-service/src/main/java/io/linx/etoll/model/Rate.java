@@ -20,4 +20,8 @@ public class Rate {
     @Getter
     @Setter
     private String rate;
+
+    @Getter
+    @Setter
+    private String connstring;
 }
