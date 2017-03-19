@@ -23,7 +23,8 @@
 		<module>e-toll-driver-profile-service</module>
         <module>e-toll-rate-service</module>
         <module>e-toll-zuul-gateway</module>
-    </modules>
+		<module>e-toll-auth-server</module>
+	</modules>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
