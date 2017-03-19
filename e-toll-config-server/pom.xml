@@ -48,14 +48,18 @@
         <artifactId>fabric8-maven-plugin</artifactId>
         <version>3.2.8</version>
         <executions>
-          <execution>
+        <execution>
             <id>fmp</id>
+            <phase>verify</phase>
             <goals>
-              <goal>resource</goal>
+             <goal>resource</goal>
               <goal>helm</goal>
               <goal>build</goal>
             </goals>
-          </execution>
+            <inherited>false</inherited>
+            <configuration>
+            </configuration>
+          </execution>          
         </executions>
       </plugin>
         </plugins>
