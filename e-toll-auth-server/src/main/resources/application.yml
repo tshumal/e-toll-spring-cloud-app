@@ -1,4 +1,9 @@
 server:
   port: 9000
+security:
+  oauth2:
+    client:
+
+      id: linx
 
 #Initial security credentials
