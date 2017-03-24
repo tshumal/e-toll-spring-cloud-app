@@ -1,4 +1,11 @@
 server:
   port: 9000
+  context-path: /uaa
 
-#Initial security credentials
+security:
+  oauth2:
+    client:
+      clientId: linx
+      clientSecret: linxsecret
+      authorized-grant-types: authorization_code,refresh_token,password,client_credentials
+      scope: toll_read,toll_report
