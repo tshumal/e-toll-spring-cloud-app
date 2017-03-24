@@ -13,6 +13,6 @@ encrypt:
 security:
   oauth2:
     resource:
-      user-info-uri: https://api.github.com/user
+      user-info-uri: http://localhost:9000/uaa/user
 server:
   port: 8001
