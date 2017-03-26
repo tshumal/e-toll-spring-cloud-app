@@ -1,3 +1,7 @@
+spring:
+  application:
+    name: e-toll-auth-server
+
 server:
   port: 9000
   context-path: /uaa
