@@ -1,6 +1,7 @@
 package io.linx.etoll;
 
 import lombok.extern.java.Log;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.messaging.Source;
@@ -12,5 +13,9 @@ import org.springframework.cloud.stream.messaging.Source;
 @Log
 @EnableBinding(Source.class)
 public class ETollProcessJobSourceApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ETollProcessJobSourceApplication.class, args);
+    }
 
 }

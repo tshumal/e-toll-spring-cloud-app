@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class TaskController {
 	
 	@Autowired
-	private TaskProcessor t;
+	private TaskProcessor taskProcessor;
 	
 	//pass in POST payload values
 		@RequestMapping(path = "/tasks", method = RequestMethod.POST)
 		public @ResponseBody String launchTask(@RequestBody String s) {
 			
-			t.publishRequest(s);
+			taskProcessor.publishRequest(s);
 			
 			System.out.println("request made");
 			
