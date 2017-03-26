@@ -24,7 +24,8 @@
         <module>e-toll-rate-service</module>
         <module>e-toll-zuul-gateway</module>
 		<module>e-toll-auth-server</module>
-	</modules>
+        <module>e-toll-zipkin-server</module>
+    </modules>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
