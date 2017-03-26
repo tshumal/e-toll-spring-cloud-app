@@ -12,6 +12,11 @@ spring:
           search-paths: toll-gate*
         encrypt:
           enabled: false
+  zipkin:
+    baseUrl: http://localhost:9411
+  sleuth:
+    sampler:
+      percentage: 1.0
 security:
   basic:
     enabled: true
@@ -24,3 +29,9 @@ security:
   #  active: native
   encrypt:
     key: secret
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          sleuth: DEBUG

@@ -1,11 +1,19 @@
-spring:
-  application:
-    name: e-toll-auth-server
-
 server:
   port: 9000
   context-path: /uaa
-
+spring:
+  application:
+    name: e-toll-auth-server
+  cloud:
+    config:
+      uri: http://localhost:8888
+      username: admin
+      password: admin
+  zipkin:
+    baseUrl: http://localhost:9411
+  sleuth:
+    sampler:
+      percentage: 1.0
 security:
   oauth2:
     client:
@@ -13,8 +21,13 @@ security:
       clientSecret: linxsecret
       authorized-grant-types: authorization_code,refresh_token,password,client_credentials
       scope: toll_read,toll_report, toll_write
-
 #  user:
 #      name: lingani
 #      password: password
 #      role: USER
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          sleuth: DEBUG

@@ -1,3 +1,5 @@
+server:
+  port: 8002
 spring:
   application:
     name: e-toll-usage-service
@@ -8,9 +10,18 @@ spring:
       uri: http://localhost:8888
       username: admin
       password: admin
-server:
-  port: 8002
+  zipkin:
+    baseUrl: http://localhost:9411
+  sleuth:
+    sampler:
+      percentage: 1.0
 security:
   oauth2:
     resource:
       user-info-uri: http://localhost:9000/uaa/user
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          sleuth: DEBUG
