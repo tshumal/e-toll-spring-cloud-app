@@ -21,12 +21,12 @@ public class VehicleService {
 
         DriverVehicleDetails driverVehicleDetails;
 
-        Span s = this.tracer.createSpan("lookupvehicle");
+        Span span = this.tracer.createSpan("lookupvehicle");
         try {
             //add tags
             this.tracer.addTag("customerid", driverId.toString());
 
-            s.logEvent("DB query started");
+            span.logEvent("DB query started");
 
             Thread.sleep(500);
 
@@ -37,9 +37,9 @@ public class VehicleService {
 
             driverVehicleDetails = vehicles.get(driverId);
 
-            s.logEvent("DB query completed");
+            span.logEvent("DB query completed");
         } finally {
-            this.tracer.close(s);
+            this.tracer.close(span);
         }
 
         return driverVehicleDetails;
