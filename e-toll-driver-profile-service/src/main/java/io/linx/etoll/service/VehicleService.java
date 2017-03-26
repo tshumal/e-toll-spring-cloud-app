@@ -6,8 +6,7 @@ import org.springframework.cloud.sleuth.Span;
 import org.springframework.cloud.sleuth.Tracer;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 /**
  * Created by lingani on 3/25/17.
@@ -31,10 +30,10 @@ public class VehicleService {
 
             Thread.sleep(500);
 
-            List<DriverVehicleDetails> vehicles = new ArrayList<>();
-            vehicles.add(new DriverVehicleDetails(100, "Lincoln Continental", "SNU 330 GP"));
-            vehicles.add(new DriverVehicleDetails(101, "Chevrolet Camaro", "R7T YR43 GP"));
-            vehicles.add(new DriverVehicleDetails(102, "Volkswagen Beetle", "6CV I3E2 GP"));
+            HashMap<Integer, DriverVehicleDetails> vehicles = new HashMap<>();
+            vehicles.put(100, new DriverVehicleDetails(100, "Lincoln Continental", "SNU 330 GP"));
+            vehicles.put(101, new DriverVehicleDetails(101, "Chevrolet Camaro", "R7T YR43 GP"));
+            vehicles.put(102, new DriverVehicleDetails(102, "Volkswagen Beetle", "6CV I3E2 GP"));
 
             driverVehicleDetails = vehicles.get(driverId);
 

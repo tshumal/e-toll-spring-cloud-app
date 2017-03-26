@@ -1,24 +1,20 @@
 package io.linx.etoll.service;
 
 import io.linx.etoll.model.DriverContactDetails;
-import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Random;
 
 /**
  * Created by lingani on 3/25/17.
  */
-@RestController
+@Service
 @Slf4j
 public class ContactService {
 
-    public DriverContactDetails getCustomerContactDetails(@PathVariable Integer driverId) throws InterruptedException {
+    public DriverContactDetails getCustomerContactDetails(Integer driverId) throws InterruptedException {
 
         //add arbitrary latency
         Random r = new Random();
@@ -27,13 +23,11 @@ public class ContactService {
         Thread.sleep(multiplier);
 
 
-        List<DriverContactDetails> customers = new ArrayList<>();
-        customers.add(new DriverContactDetails(100, "Beverly Goldberg"));
-        customers.add(new DriverContactDetails(101, "Dave Kim"));
-        customers.add(new DriverContactDetails(102, "Lainey Lewis"));
+        HashMap<Integer, DriverContactDetails> customers = new HashMap<>();
+        customers.put(100, new DriverContactDetails(100, "Beverly Goldberg"));
+        customers.put(101, new DriverContactDetails(101, "Dave Kim"));
+        customers.put(102, new DriverContactDetails(102, "Lainey Lewis"));
 
-        DriverContactDetails result = customers.get(driverId);
-
-        return result;
+        return customers.get(driverId);
     }
 }

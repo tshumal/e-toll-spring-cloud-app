@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: e-toll-driver-profile-service
+  profiles:
+    active: default
+  cloud:
+    config:
+      uri: http://localhost:8888
+      username: admin
+      password: admin
+server:
+  port: 8003
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:9000/uaa/user
