@@ -1,4 +1,4 @@
-package io.linx.etoll.controller;
+package io.linx.etoll;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package io.linx.etoll.service;
+package io.linx.etoll;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
