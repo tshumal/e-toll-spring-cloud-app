@@ -1,5 +1,5 @@
 server:
-  port: 8002
+  port: 6002
 spring:
   application:
     name: e-toll-usage-service
