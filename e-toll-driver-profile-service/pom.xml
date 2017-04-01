@@ -67,7 +67,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <finalName>e-toll-driver-profile-service</finalName>
+                </configuration>
             </plugin>
+
         </plugins>
     </build>
 

@@ -46,6 +46,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <finalName>e-toll-config-server</finalName>
+                </configuration>
             </plugin>
       <plugin>
         <groupId>io.fabric8</groupId>
