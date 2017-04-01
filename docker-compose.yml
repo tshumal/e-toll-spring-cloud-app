@@ -1,0 +1,91 @@
+version: '3'
+
+services:
+  e-toll-auth-server:
+    build: e-toll-auth-server
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+    ports:
+      - "9000:9000"
+  e-toll-config-server:
+    build: e-toll-config-server
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+    ports:
+      - "8888:8888"
+  e-toll-zipkin-server:
+    build: e-toll-zipkin-server
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+    ports:
+      - "9411:9411"
+    depends_on:
+      - geekhut-mysql
+  e-toll-zuul-gateway:
+    build: e-toll-zuul-gateway
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+    ports:
+      - "8080:8080"
+  e-toll-rate-service:
+    build: e-toll-rate-service
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+    ports:
+      - "6001:6001"
+    depends_on:
+      - e-toll-config-server
+  e-toll-usage-service:
+    build: e-toll-usage-service
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+    ports:
+      - "6002:6002"
+  e-toll-driver-profile-service:
+    build: e-toll-driver-profile-service
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+    ports:
+      - "6003:6003"
+  geekhut-mysql:
+    container_name: geekhut-mysql
+    image: mysql:latest
+    volumes:
+      - /Users/lingani/DockerVolumes/mysql/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=s00perS3cure
+      - MYSQL_DATABASE=linx
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=password
+    ports:
+      - "3306:3306"
+  geekhut-rabbitmq:
+    container_name: geekhut-rabbitmq
+    image: rabbitmq:3-management
+    volumes:
+      - /Users/lingani/DockerVolumes/rabbitmq/rabbitmq_home:/var/lib/rabbitmq
+      - /Users/lingani/DockerVolumes/rabbitmq/rabbitmq_config:/etc/rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
